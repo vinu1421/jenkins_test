@@ -32,7 +32,7 @@ properties([
                  classpath: [],
                  sandbox: false,
                  script: ''
-                ],
+                ]
 
                 script: [
                  classpath: [],
