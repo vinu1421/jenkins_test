@@ -15,7 +15,7 @@ properties([
           description: '',
           editable: false,
           name: 'test'
-        ]
+        ],
 
         [
             $class: 'CascadeChoiceParameter',
