@@ -16,10 +16,7 @@ properties([
             $class: 'ExtensibleChoiceParameterDefinition',
             choiceListProvider: [$class: 'TextareaChoiceListProvider',
             addEditedValue: false,
-            choiceListText: '''DoNothing
-            Enable
-            Disable
-            ''', 
+            choiceListText: '''DoNothing"\n"Enable"\n"Disable''', 
             defaultChoice: 'DoNothing'],
             description: '',
             editable: false,
