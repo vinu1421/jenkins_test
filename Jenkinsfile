@@ -7,15 +7,15 @@ properties([
         [
           $class: 'ExtensibleChoiceParameterDefinition',
           choiceListProvider: [$class: 'TextareaChoiceListProvider',
-          addEditedValue: false, choiceListText: '''1
-          2
-          3
+          addEditedValue: false, choiceListText: '''DoNothing
+          Enable
+          Disable
           ''',
-          defaultChoice: '1'],
+          defaultChoice: 'DoNothing'],
           description: '',
           editable: false,
           name: 'test'
-        ],
+        ]
 
         [
             $class: 'CascadeChoiceParameter',
