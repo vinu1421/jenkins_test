@@ -99,7 +99,7 @@ properties([
             filterable: false, 
             name: 'C4Environment', 
             randomName: 'choice-parameter-38182959825985', 
-            referencedParameters: 'EventHandlerAction'
+            referencedParameters: 'EventHandlerAction',
             script: [
                 $class: 'GroovyScript', 
                 fallbackScript: [classpath: [], 
