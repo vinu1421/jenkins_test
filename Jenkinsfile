@@ -45,7 +45,7 @@ properties([
               sandbox: false, 
               script: '''if (JobAction.equals("Enable") || JobAction.equals("Disable")) {
                          return ["NF_PRO_Indexing_Automation","NF_PRO_Re-Indexing","F_PROD_Re-Indexing","StoreFront_Restart_On_AjpRejectedCount","Food_StoreFront_Restart_On_AjpRejectedCount"]
-                        }''']
+                         }''']
                         
             ]
 
