@@ -158,7 +158,14 @@ properties([
 node() {
 
     stage('Build') { 
-        sh label: '', script: 'echo $C4Environment $ServiceName'
+        List servers = "${C4Environment}".split(',')
+
+        servers.each {
+            println "Item: $it"
+        }
+
+    
+
     }
 
         
