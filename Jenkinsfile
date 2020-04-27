@@ -1,3 +1,5 @@
+import groovy.json.JsonSlurper
+
 properties([
     [
         $class: 'JiraProjectProperty'
@@ -161,7 +163,13 @@ node() {
         List servers = "${C4Environment}".split(',')
 
         sh "status=\$(curl -s --insecure -u 'omdguest:omdguest' -H 'Accept:application/json' -k -L 'http://omd.carrefour.es/c4omd/thruk/cgi-bin/status.cgi?view_mode=json&s0_op=%3D&s0_type=event+handler&s0_value=sf_restart&columns=host_name,description,event_handler,host_groups')" 
-        println(status)
+        
+        def json = new JsonSlurper().parseText(status)
+
+        def hostname = json.host_name
+        hostname.each{
+            println it."host_name"
+        }
         
 
     
