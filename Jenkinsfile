@@ -160,9 +160,11 @@ node() {
     stage('Build') { 
         List servers = "${C4Environment}".split(',')
 
-        servers.each {
-            println "Item: $it"
-        }
+        sh "status=\$(https://omd.carrefour.es/c4omd/thruk/cgi-bin/status.cgi?view_mode=json&s0_op=%3D&s0_type=event+handler&s0_value=sf_restart&columns=host_name,description,event_handler,host_groups)" 
+        println(status)
+        println ${status}
+
+    
 
     
 
