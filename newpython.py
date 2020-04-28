@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import jenkins
+import os
+vinu = os.getenv("ServiceName")
+print(vinu)
 
-print(ServiceName)
-print(C4Environment)
