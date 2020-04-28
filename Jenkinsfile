@@ -1,10 +1,10 @@
 import groovy.json.JsonSlurper
 class status
-{
-     string description
-     string event_handler
-     string[] host_groups
-     string host_name
+{ 
+     String description
+     String event_handler
+     String[] host_groups
+     String host_name
 }
 
 properties([
