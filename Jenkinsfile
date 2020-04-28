@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 
 
-class status
+class Status
 { 
      String description
      String event_handler
@@ -181,7 +181,9 @@ node() {
         def slurper = new JsonSlurper()
 
         def jsonMap = slurper.parseText(status)
-        def statusObject = new status[](jsonMap)
+        println(jsonMap.getClass())        
+
+        def statusObject = Status[](jsonMap)
         println(statusObject.getClass())
         println(statusObject.length)
         //def hostname = json.host_name
