@@ -1,4 +1,6 @@
 import groovy.json.JsonSlurper
+import java.util.List
+
 class status
 { 
      String description
