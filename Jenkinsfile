@@ -178,7 +178,7 @@ node() {
         List servers = "${C4Environment}".split(',')
 
         checkoutRepo()
-        sh 'python newpython.py'
+        sh '/usr/bin/python newpython.py'
 
 
             
