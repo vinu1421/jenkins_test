@@ -1,13 +1,16 @@
-import jenkins.model.*
-import groovy.json.JsonSlurper
+def checkoutRepo(){
 
+	stage('Checkout Repo') {
+		checkout([$class: 'GitSCM', 
+        branches: [[name: '*/vinu_python']], 
+        doGenerateSubmoduleConfigurations: false, 
+        extensions: [], 
+        submoduleCfg: [], 
+        userRemoteConfigs: [[credentialsId: '918483d2-a278-43f7-8618-1dc618466dfc', url: 'https://github.com/vinu1421/jenkins_test.git']]
+        
+        ])
+	}
 
-class Status
-{ 
-     String description
-     String event_handler
-     String[] host_groups
-     String host_name
 }
 
 properties([
@@ -174,20 +177,10 @@ node() {
     stage('Build') { 
         List servers = "${C4Environment}".split(',')
 
-        sh "status=\$(curl -s --insecure -u 'omdguest:omdguest' -H 'Accept:application/json' -k -L 'http://omd.carrefour.es/c4omd/thruk/cgi-bin/status.cgi?view_mode=json&s0_op=%3D&s0_type=event+handler&s0_value=sf_restart&columns=host_name,description,event_handler,host_groups')" 
-        
-        //println(status[0].description)
+        checkoutRepo()
+        sh 'python3 newpython.py'
 
 
-        def slurper = new JsonSlurper()
-
-        def jsonMap = slurper.parseText(status)
-        echo "Console \$(jsonMap.getClass())"        
-
-        def statusObject = Status[](jsonMap)
-        echo "Console \$(statusObject.getClass())"
-        echo "Console \$(statusObject.length)"
-        //def hostname = json.host_name
             
 
     
