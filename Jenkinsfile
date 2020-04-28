@@ -1,3 +1,4 @@
+import jenkins.model.*
 import groovy.json.JsonSlurper
 
 
@@ -181,11 +182,11 @@ node() {
         def slurper = new JsonSlurper()
 
         def jsonMap = slurper.parseText(status)
-        print "Console \$(jsonMap.getClass())"        
+        echo "Console \$(jsonMap.getClass())"        
 
         def statusObject = Status[](jsonMap)
-        print "Console \$(statusObject.getClass())"
-        print "Console \$(statusObject.length)"
+        echo "Console \$(statusObject.getClass())"
+        echo "Console \$(statusObject.length)"
         //def hostname = json.host_name
             
 
