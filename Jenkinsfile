@@ -178,7 +178,7 @@ node() {
         List servers = "${C4Environment}".split(',')
 
         checkoutRepo()
-        sh 'apk add python3'
+        sh 'python3 newpython.py'
 
 
             
