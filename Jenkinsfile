@@ -1,4 +1,11 @@
 import groovy.json.JsonSlurper
+class status
+{
+     string description
+     string event_handler
+     string[] host_groups
+     string host_name
+}
 
 properties([
     [
@@ -160,13 +167,7 @@ properties([
 node() {
 
 
-class status
-{
-     string description
-     string event_handler
-     string[] host_groups
-     string host_name
-}
+
     stage('Build') { 
         List servers = "${C4Environment}".split(',')
 
