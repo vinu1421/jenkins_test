@@ -36,7 +36,9 @@ for eventhandlers in EventHandler:
             response1 = requests.post(api_url, verify=False)
             print(hostname)
             break
-        
+        else
+
+            print("some error")
             
   
             
