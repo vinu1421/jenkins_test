@@ -11,36 +11,10 @@ option = os.getenv("EventHandlerAction")
 omduser = 'omdguest'
 omdpass = 'omdguest'
 
-if option == 'Enable':
-    ACTION="enable_svc_event_handler"
-elif option == 'Disable':
-    ACTION="disable_svc_event_handler"
-
-
-
-for eventhandlers in EventHandler:
-    
-    url_data = "http://omd.carrefour.es/c4omd/thruk/cgi-bin/status.cgi?view_mode=json&s0_op=%3D&s0_type=event+handler&s0_value=" + eventhandlers + "&columns=host_name,description,event_handler,host_groups"
-    response = requests.get(url_data, verify=False, auth=HTTPBasicAuth(omduser, omdpass))
-    json_data = json.loads(response.content)
-    
-    for data in json_data:
-        
-        hostgroup = data['host_groups'][0]
-        description = data['description']
-        hostname = data['host_name']
-        
-        if hostgroup in environment and description in ServiceName:
-            
-            api_url= "https://omdguest:omdguest@omd.carrefour.es/c4omd/thruk/r/v1/services/" + hostname + "/" + description + "/cmd/" + ACTION
-            response1 = requests.post(api_url, verify=False)
-            print(hostname)
-            break
-        else:
-
-            print("some error")
-            
-  
+print(environment)
+print(EventHandler)
+print(ServiceName)
+print(option)
             
                 
         
