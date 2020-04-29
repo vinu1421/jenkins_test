@@ -129,7 +129,7 @@ properties([
         
         [
             $class: 'CascadeChoiceParameter', 
-            choiceType: 'PT_RADIO', 
+            choiceType: 'PT_CHECKBOX', 
             description: '', 
             filterLength: 1, 
             filterable: false, 
