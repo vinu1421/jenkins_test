@@ -35,6 +35,8 @@ for eventhandlers in EventHandler:
             api_url= "https://omdguest:omdguest@omd.carrefour.es/c4omd/thruk/r/v1/services/" + hostname + "/" + description + "/cmd/" + ACTION
             response1 = requests.post(api_url, verify=False)
             print(hostname)
+            break
+        
             
   
             
