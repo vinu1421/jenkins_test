@@ -5,8 +5,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 environment = os.getenv("C4Environment").split(',')
-EventHandler = os.getenv("EventHandler").split()
-ServiceName = os.getenv("ServiceName").split()
+EventHandler = os.getenv("EventHandler").split(',')
+ServiceName = os.getenv("ServiceName").split(',')
 option = os.getenv("EventHandlerAction")
 omduser = 'omdguest'
 omdpass = 'omdguest'
@@ -16,10 +16,8 @@ if option == 'Enable':
 elif option == 'Disable':
     ACTION="disable_svc_event_handler"
 
-print(environment)
 
 
-print(environment[0])
 for eventhandlers in EventHandler:
     
     url_data = "http://omd.carrefour.es/c4omd/thruk/cgi-bin/status.cgi?view_mode=json&s0_op=%3D&s0_type=event+handler&s0_value=" + eventhandlers + "&columns=host_name,description,event_handler,host_groups"
@@ -31,15 +29,15 @@ for eventhandlers in EventHandler:
         hostgroup = data['host_groups'][0]
         description = data['description']
         hostname = data['host_name']
-
-    
         
-        if hostgroup in environment:
+        if hostgroup in environment and description in ServiceName:
             
-            print(hostgroup)
-            print(environment)
+            
             print(hostname)
-        
+            
+        else:
+
+            print("some error")
             
   
             
