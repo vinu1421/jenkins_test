@@ -35,7 +35,7 @@ for eventhandlers in EventHandler:
             print(hostgroup)
             print(description)
             print(hostname)
-        else
+        else:
             print(error)
             
   
