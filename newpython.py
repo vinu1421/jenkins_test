@@ -16,7 +16,7 @@ if option == 'Enable':
 elif option == 'Disable':
     ACTION="disable_svc_event_handler"
 
-
+print(environment[0])
 for eventhandlers in EventHandler:
     
     url_data = "http://omd.carrefour.es/c4omd/thruk/cgi-bin/status.cgi?view_mode=json&s0_op=%3D&s0_type=event+handler&s0_value=" + eventhandlers + "&columns=host_name,description,event_handler,host_groups"
