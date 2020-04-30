@@ -30,6 +30,10 @@ for eventhandlers in EventHandler:
         hostgroup = data['host_groups'][0]
         description = data['description']
         hostname = data['host_name']
+
+            print(hostgroup)
+            print(description)
+            print(hostname)
         
         if hostgroup in environment and description in ServiceName:
             
@@ -37,7 +41,7 @@ for eventhandlers in EventHandler:
             print(description)
             print(hostname)
         else:
-            print(error)
+            print('error in if block')
             
   
             
