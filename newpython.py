@@ -4,7 +4,7 @@ import json
 import requests
 from requests.auth import HTTPBasicAuth
 
-environment = os.getenv("C4Environment").split()
+environment = os.getenv("C4Environment").split(',')
 EventHandler = os.getenv("EventHandler").split()
 ServiceName = os.getenv("ServiceName").split()
 option = os.getenv("EventHandlerAction")
@@ -15,6 +15,9 @@ if option == 'Enable':
     ACTION="enable_svc_event_handler"
 elif option == 'Disable':
     ACTION="disable_svc_event_handler"
+
+print(environment)
+
 
 print(environment[0])
 for eventhandlers in EventHandler:
