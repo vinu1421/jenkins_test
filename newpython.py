@@ -32,7 +32,8 @@ for eventhandlers in EventHandler:
         
         if hostgroup in environment and description in ServiceName:
             
-            
+            api_url= "https://omdguest:omdguest@omd.carrefour.es/c4omd/thruk/r/v1/services/" + hostname + "/" + description + "/cmd/" + ACTION
+            response1 = requests.post(api_url, verify=False)
             print(hostname)
             
         else:
