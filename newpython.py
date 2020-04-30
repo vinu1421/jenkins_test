@@ -16,7 +16,8 @@ if option == 'Enable':
 elif option == 'Disable':
     ACTION="disable_svc_event_handler"
 
-
+print(environment)
+print(ServiceName)
 
 for eventhandlers in EventHandler:
     
