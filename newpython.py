@@ -16,8 +16,6 @@ if option == 'Enable':
 elif option == 'Disable':
     ACTION="disable_svc_event_handler"
 
-print(environment)
-print(ServiceName)
 
 for eventhandlers in EventHandler:
     
@@ -31,17 +29,14 @@ for eventhandlers in EventHandler:
         description = data['description']
         hostname = data['host_name']
 
-        print(hostgroup)
-        print(description)
-        print(hostname)
+    
         
-        if hostgroup in environment and description in ServiceName:
+        if hostgroup in environment:
             
             print(hostgroup)
-            print(description)
+            print(environment)
             print(hostname)
-        else:
-            print('error in if block')
+        
             
   
             
